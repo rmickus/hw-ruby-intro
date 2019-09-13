@@ -3,15 +3,44 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  sum = 0
+  for elem in arr do 
+    sum += elem
+  end
+  return sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if (arr.length == 0)
+    return 0;
+  end
+  if (arr.length == 1)
+    return arr[0];
+  end
+  max1 = arr[0];
+  max2 = arr[1];
+  for i in 2..arr.length - 1 do 
+    if arr[i] > max1
+      if arr[i] > max2
+        max2 = max1
+      end
+      max1 = arr[i]
+    elsif arr[i] > max2
+      max2 = arr[i]
+    end
+  end
+  return max1 + max2
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  for i in 0..arr.length - 1 do
+    for j in i+1..arr.length - 1 do
+      if arr[i] + arr[j] == n 
+        return true
+      end
+    end
+  end
+  return false
 end
 
 # Part 2
@@ -33,3 +62,6 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
+
+
+max_2_sum([1, 2, 3, 3])
