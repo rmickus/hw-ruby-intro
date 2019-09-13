@@ -62,6 +62,3 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
-
-
-max_2_sum([1, 2, 3, 3])
