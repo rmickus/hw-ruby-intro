@@ -100,6 +100,27 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(_isbn, _price)
+    raise ArgumentError, 'ISBN must have length > 0' unless _isbn.length > 0
+    raise ArgumentError, 'Price must be positive' unless _price > 0
+    @isbn = _isbn
+    @price = _price
+  end
+  def isbn
+    @isbn
+  end
+  def isbn=(new_isbn)
+    @isbn = new_isbn
+  end
+  def price
+    @price
+  end
+  def price=(new_price)
+    @price = new_price
+  end
+  def price_as_string()
+    return "$" + "%.2f" % @price
+  end
+  
 end
 
