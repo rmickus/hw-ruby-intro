@@ -46,15 +46,55 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.length == 0
+    return false
+  end
+  let = s[0].ord
+  if ((let > 64 && let < 91) || (let > 96 && let < 123))
+    case let
+    when 65
+      return false
+    when 69
+      return false
+    when 73
+      return false
+    when 79
+      return false
+    when 85
+      return false
+    when 97
+      return false
+    when 101
+      return false
+    when 105
+      return false
+    when 111
+      return false
+    when 117
+      return false
+    else 
+      return true
+    end
+  end
+  return false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  num = 0
+  for i in 0..s.length - 1 do
+    if s[i].ord == 48
+      # 0 digit, do nothing
+    elsif s[i].ord == 49
+      num += 2**(s.length - 1 - i)
+    else
+      return false
+    end
+  end
+  return num % 4 == 0 
 end
 
 # Part 3
@@ -62,3 +102,4 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
+
