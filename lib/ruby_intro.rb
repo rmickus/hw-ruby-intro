@@ -84,6 +84,9 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
+  if s.length == 0
+    return false
+  end
   num = 0
   for i in 0..s.length - 1 do
     if s[i].ord == 48
